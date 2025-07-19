@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlay Image on Iframe</title>
+    <style>
+        /* The container that holds everything */
+        .container {
+            position: relative;
+            width: 1500px; /* Container width */
+        }
+
+        /* Iframe container that holds the iframe */
+        .iframe-container {
+            position: relative;
+            z-index: 1; /* Ensure iframe is below the images */
+            width: 100%;
+        }
+
+        iframe {
+            width: 100%;
+            height: 700px; /* Height of the iframe */
+            border: 2px solid black; /* Adding a black border to the iframe */
+        }
+
+        /* First overlay image at the top */
+        .overlay-image-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 170px; /* Height of the top image */
+            object-fit: cover;
+            z-index: 2; /* Ensure top image appears above the iframe */
+        }
+
+        /* Second overlay image at the bottom */
+        .overlay-image-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 70px; /* Height of the bottom image */
+            object-fit: cover;
+            z-index: 2; /* Ensure bottom image appears above the iframe */
+        }
+
+        /* Left overlay image */
+        .overlay-image-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px; /* Width of the left image */
+            height: 700px; /* Match iframe height */
+            object-fit: cover;
+            z-index: 2; /* Ensure left image appears above the iframe */
+        }
+
+        /* Right overlay image */
+        .overlay-image-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50px; /* Width of the right image */
+            height: 700px; /* Match iframe height */
+            object-fit: cover;
+            z-index: 2; /* Ensure right image appears above the iframe */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- First overlay image on top -->
+        <img src="banner.jpg" alt="Top Overlay Image" class="overlay-image-top">
+        
+        <!-- Iframe -->
+        <div class="iframe-container">
+            <iframe src="https://docs.google.com/spreadsheets/d/1zmez1tdngdEUN2mblycCOhP6JRLt7RS8zzEnpFUQkHI/edit?gid=279123229#gid=279123229&single=true" frameborder="0"></iframe>
+        </div>
+
+        <!-- Second overlay image on bottom -->
+        <img src="banner.jpg" alt="Bottom Overlay Image" class="overlay-image-bottom">
+
+        <!-- Left side overlay image -->
+        <img src="banner.jpg" alt="Left Overlay Image" class="overlay-image-left">
+
+        <!-- Right side overlay image -->
+        <img src="banner.jpg" alt="Right Overlay Image" class="overlay-image-right">
+    </div>
+
+</body>
+</html>
